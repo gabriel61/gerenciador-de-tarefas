@@ -4,7 +4,7 @@ import './App.css';
 const App = () => {
 
   //let message = "holy s";
-  const [message, setMessage] = useState();
+  const [message, setMessage] = useState("hello world!");
 
   return (
     <>
