@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
+
 import './App.css';
 import AddTask from "./components/AddTask";
 import Tasks from "./components/Tasks";
@@ -23,7 +25,7 @@ const App = () => {
     /* tudo que está em tasks e uma nova task */
     const newTasks = [...tasks, {
       title: taskTitle,
-      id: Math.random(10),
+      id: uuidv4(),
       completed: false,
     }]
 
