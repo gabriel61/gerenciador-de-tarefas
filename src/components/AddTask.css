@@ -14,3 +14,8 @@
     color: #eee;
     font-size: 16px;
 }
+
+.add-task-button-container {
+    margin-left: 10px;
+    flex: 1;
+}
