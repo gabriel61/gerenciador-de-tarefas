@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import './App.css';
+import Tasks from "./components/Tasks";
 
 const App = () => {
 
   //let message = "holy s";
-  const [task, setTask] = useState([
+  const [tasks, setTasks] = useState([
     {
       id: '1',
       title: 'Estudar Programação',
@@ -19,10 +20,9 @@ const App = () => {
 
   return (
     <>
-      <div className="container"></div>
-      {/* <button onClick={() => setMessage("hellooooooo")}>
-        mudar mensagem
-      </button> */}
+      <div className="container">
+        <Tasks tasks={tasks} />
+      </div>
     </>
   );
 };
