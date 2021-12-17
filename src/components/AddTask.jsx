@@ -9,11 +9,13 @@ const AddTask = ({handleTaskAddition}) => {
   /* e.target.value pega oq é escrito no input */
   const handleInputChange = (e) => {
     setInputData(e.target.value);
+
   };
 
   const handleAddTaksClick = () => {
-    handleTaskAddition(inputData)
-  }
+    handleTaskAddition(inputData);
+    setInputData("");
+  };
 
   return (
     <div className="add-task-container">

@@ -21,6 +21,20 @@ const App = () => {
     }
   ]);
 
+  const handleTaskClick = (taskId) => {
+    /* faz um map em cada task e se o id da task atual for igual
+    ao taskId irá retornar tudo que ta na task e o completed dele
+    vai ser igual ao completed que era anteriormente, se não for,
+    irá retornar a task normal */
+    const newTasks = tasks.map(task => {
+      if (task.id === taskId) return {...task, completed: !task.completed}
+
+      return task; 
+    });
+
+    setTasks(newTasks);
+  };
+
   const handleTaskAddition = (taskTitle) => {
     /* tudo que está em tasks e uma nova task */
     const newTasks = [...tasks, {
@@ -36,7 +50,7 @@ const App = () => {
     <>
       <div className="container">
         <AddTask handleTaskAddition={handleTaskAddition} />
-        <Tasks tasks={tasks} />
+        <Tasks tasks={tasks} handleTaskClick={handleTaskClick} />
       </div>
     </>
   );
