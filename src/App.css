@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .container {
     max-width: 500px;
     margin: 30px auto;
@@ -7,14 +6,4 @@
     border: 2px solid chartreuse;
     padding: 30px;
     border-radius: 10px;
-=======
-.container {
-    max-width: 500px;
-    margin: 30px auto;
-    overflow: auto;
-    min-height: 300px;
-    border: 2px solid chartreuse;
-    padding: 30px;
-    border-radius: 10px;
->>>>>>> ddf70907be52693c1ea86a67e2c919eb4f07c0e2
 }

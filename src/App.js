@@ -4,14 +4,25 @@ import './App.css';
 const App = () => {
 
   //let message = "holy s";
-  const [message, setMessage] = useState("hello world!");
+  const [task, setTask] = useState([
+    {
+      id: '1',
+      title: 'Estudar Programação',
+      completed: false,
+    },
+    {
+      id: '2',
+      title: 'Ler Livros',
+      completed: true,
+    }
+  ]);
 
   return (
     <>
-      <div className="container">{message}</div>
-      <button onClick={() => setMessage("hellooooooo")}>
+      <div className="container"></div>
+      {/* <button onClick={() => setMessage("hellooooooo")}>
         mudar mensagem
-      </button>
+      </button> */}
     </>
   );
 };
