@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
-import { BrowserRouter as Router, Route} from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Header from "./components/Header"
-import './App.css';
 import AddTask from "./components/AddTask";
 import Tasks from "./components/Tasks";
+import TaskDetails from "./components/TaskDetails";
+import './App.css';
 
 const App = () => {
 
@@ -28,7 +29,7 @@ const App = () => {
     ao taskId irá retornar tudo que ta na task e o completed dele
     vai ser igual ao completed que era anteriormente, se não for,
     irá retornar a task normal */
-    const newTasks = tasks.map(task => {
+    const newTasks = tasks.map((task) => {
       if (task.id === taskId) return {...task, completed: !task.completed}
 
       return task; 
@@ -58,17 +59,21 @@ const App = () => {
     <Router>
       <div className="container">
         <Header/>
-        <Route path="/" exact render={() => (
-          <>
-            <AddTask handleTaskAddition={handleTaskAddition} />
-            <Tasks 
-              tasks={tasks} 
-              handleTaskClick={handleTaskClick} 
-              handleTaskDeletion={handleTaskDeletion}
-            /> 
-          </>
-        )}
-        />
+          <Route 
+            path="/" 
+            exact 
+            render={() => (
+              <>
+                <AddTask handleTaskAddition={handleTaskAddition} />
+                <Tasks 
+                  tasks={tasks} 
+                  handleTaskClick={handleTaskClick} 
+                  handleTaskDeletion={handleTaskDeletion}
+                /> 
+              </>
+            )}
+          />
+          <Route path="/:taskTitle" exact component={TaskDetails} />
       </div>
     </Router>
   );
